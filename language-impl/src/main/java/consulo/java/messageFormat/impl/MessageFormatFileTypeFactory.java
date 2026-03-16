@@ -10,6 +10,6 @@ import jakarta.annotation.Nonnull;
 public class MessageFormatFileTypeFactory extends FileTypeFactory {
     @Override
     public void createFileTypes(@Nonnull FileTypeConsumer consumer) {
-        consumer.consume(MessageFormatFileType.INSTANCE);
+        consumer.consume(MessageFormatFileType.INSTANCE, MessageFormatFileType.JDK_EXTENSION + ";" + MessageFormatFileType.ICU_EXTENSION);
     }
 }

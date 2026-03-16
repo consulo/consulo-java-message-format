@@ -14,8 +14,8 @@ import jakarta.annotation.Nullable;
 import java.lang.reflect.Method;
 
 public abstract class MessageFormatBaseParsingTest extends SimpleParsingTest<Object> {
-    public MessageFormatBaseParsingTest(String dataPath) {
-        super(dataPath, "msgfmt");
+    public MessageFormatBaseParsingTest(String dataPath, String extension) {
+        super(dataPath, extension);
     }
 
     @Nonnull

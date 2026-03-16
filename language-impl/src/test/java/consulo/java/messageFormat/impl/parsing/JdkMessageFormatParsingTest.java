@@ -1,5 +1,6 @@
 package consulo.java.messageFormat.impl.parsing;
 
+import consulo.java.messageFormat.MessageFormatFileType;
 import consulo.java.messageFormat.impl.MessageFormatVersionKind;
 import consulo.java.messageFormat.impl.MessageFormatBaseParsingTest;
 import consulo.java.messageFormat.impl.SetMessageFormatVersion;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class JdkMessageFormatParsingTest extends MessageFormatBaseParsingTest {
     public JdkMessageFormatParsingTest() {
-        super("parsing/jdk");
+        super("parsing/jdk", MessageFormatFileType.JDK_EXTENSION);
     }
 
     @Test

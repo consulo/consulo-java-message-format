@@ -10,6 +10,9 @@ import jakarta.annotation.Nonnull;
 public class MessageFormatFileType extends LanguageFileType {
     public static final MessageFormatFileType INSTANCE = new MessageFormatFileType();
 
+    public static final String JDK_EXTENSION = "jmsgfmt";
+    public static final String ICU_EXTENSION = "imsgfmt";
+
     private MessageFormatFileType() {
         super(MessageFormatLanguage.INSTANCE);
     }
@@ -29,7 +32,7 @@ public class MessageFormatFileType extends LanguageFileType {
     @Nonnull
     @Override
     public String getDefaultExtension() {
-        return "msgfmt";
+        return JDK_EXTENSION;
     }
 
     @Nonnull

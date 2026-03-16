@@ -2,6 +2,7 @@ package consulo.java.messageFormat.impl.annotator;
 
 import consulo.annotation.access.RequiredReadAction;
 import consulo.annotation.component.ExtensionImpl;
+import consulo.application.dumb.DumbAware;
 import consulo.java.messageFormat.MessageFormatElementTypes;
 import consulo.java.messageFormat.MessageFormatLanguage;
 import consulo.java.messageFormat.impl.localize.MessageFormatImplLocalize;
@@ -20,7 +21,7 @@ import jakarta.annotation.Nullable;
 import java.util.Set;
 
 @ExtensionImpl
-public class MessageFormatAnnotatorFactory implements AnnotatorFactory {
+public class MessageFormatAnnotatorFactory implements AnnotatorFactory, DumbAware {
     private static final Set<String> JDK_FORMAT_TYPES = Set.of("number", "date", "time", "choice");
     private static final Set<String> ICU_FORMAT_TYPES = Set.of(
         "number", "date", "time", "choice",
@@ -48,7 +49,7 @@ public class MessageFormatAnnotatorFactory implements AnnotatorFactory {
                 String text = element.getText().trim();
                 Set<String> validTypes = getValidFormatTypes(element);
                 if (!validTypes.contains(text)) {
-                    holder.newAnnotation(HighlightSeverity.ERROR, MessageFormatImplLocalize.errorUnknownFormatType(text).get())
+                    holder.newAnnotation(HighlightSeverity.ERROR, MessageFormatImplLocalize.errorUnknownFormatType(text))
                         .range(element)
                         .create();
                 }
@@ -57,7 +58,7 @@ public class MessageFormatAnnotatorFactory implements AnnotatorFactory {
 
         @RequiredReadAction
         private Set<String> getValidFormatTypes(PsiElement element) {
-            LanguageVersion version = LanguageVersionUtil.findLanguageVersion(MessageFormatLanguage.INSTANCE, element.getContainingFile());
+            LanguageVersion version = LanguageVersionUtil.findLanguageVersion(MessageFormatLanguage.INSTANCE, element);
             if (version instanceof JdkMessageFormatVersion) {
                 return JDK_FORMAT_TYPES;
             }

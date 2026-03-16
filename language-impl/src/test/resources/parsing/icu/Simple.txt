@@ -1,0 +1,7 @@
+FILE
+  MessageFormatElementImpl(FORMAT_ELEMENT)
+    PsiElement(LBRACE)('{')
+    MessageFormatElementImpl(ARGUMENT_INDEX)
+      PsiElement(IDENTIFIER)('name')
+    PsiElement(RBRACE)('}')
+  PsiElement(TEXT)(' sent you a message')

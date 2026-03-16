@@ -1,0 +1,4 @@
+plugin/sandbox
+.consulo/
+.claude/
+target/

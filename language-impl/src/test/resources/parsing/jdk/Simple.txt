@@ -1,0 +1,8 @@
+FILE
+  PsiElement(TEXT)('Hello ')
+  MessageFormatElementImpl(FORMAT_ELEMENT)
+    PsiElement(LBRACE)('{')
+    MessageFormatElementImpl(ARGUMENT_INDEX)
+      PsiElement(NUMBER)('0')
+    PsiElement(RBRACE)('}')
+  PsiElement(TEXT)('!')

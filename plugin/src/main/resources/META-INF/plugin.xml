@@ -1,0 +1,9 @@
+<consulo-plugin>
+    <id>consulo.java.messageFormat</id>
+    <name>Java MessageFormat</name>
+    <tags>
+        <tag>custom.language</tag>
+    </tags>
+    <version>SNAPSHOT</version>
+    <depends optional="true">consulo.java</depends>
+</consulo-plugin>

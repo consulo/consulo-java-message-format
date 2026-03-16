@@ -16,6 +16,9 @@ import consulo.java.messageFormat.MessageFormatTokenTypes;
 %{
     private int braceDepth = 0;
 
+    protected int getBraceDepth() { return braceDepth; }
+    protected void setBraceDepth(int depth) { braceDepth = depth; }
+
     private void pushBrace() {
         braceDepth++;
     }

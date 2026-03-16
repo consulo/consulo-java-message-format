@@ -6,4 +6,5 @@
     </tags>
     <version>SNAPSHOT</version>
     <depends optional="true">consulo.java</depends>
+    <depends optional="true">org.jetbrains.plugins.yaml</depends>
 </consulo-plugin>

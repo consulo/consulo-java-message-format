@@ -31,6 +31,7 @@
         <module>language-api</module>
         <module>language-impl</module>
         <module>java-impl</module>
+        <module>devkit-impl</module>
         <module>plugin</module>
     </modules>
 </project>
